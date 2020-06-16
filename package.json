@@ -21,9 +21,12 @@
   },
   "homepage": "https://github.com/agilityfeat/webrtc-video-conference-tutorial#readme",
   "dependencies": {
-    "concurrently": "^5.0.0",
+    "concurrently": "^5.2.0",
     "electron": "^7.1.2",
     "express": "^4.16.4",
+    "file-system": "^2.2.2",
+    "require": "^2.4.20",
+    "requirejs": "^2.3.6",
     "socket.io": "^2.2.0"
   }
 }
