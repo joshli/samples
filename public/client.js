@@ -43,6 +43,7 @@ btnCaptureFrame.onclick = function () {
     setInterval(function() {
         context = canvas.getContext('2d');
         context.drawImage(localVideo, 0, 0, 96, 72);
+        context.drawImage(remoteVideo, 96, 0, 96, 72);
             // Get the DataUrl from the Canvas
     const url = canvas.toDataURL('image/jpg', 0.8);
 
