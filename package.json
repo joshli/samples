@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This tutorial is divided in three versions:",
   "main": "server.js",
+  "engines": {
+    "node": "12.17.x"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently \"npm run server\" \"npm run electron\" \"npm run electron\"",
@@ -23,10 +26,11 @@
   "dependencies": {
     "concurrently": "^5.2.0",
     "electron": "^7.1.2",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "file-system": "^2.2.2",
     "require": "^2.4.20",
     "requirejs": "^2.3.6",
-    "socket.io": "^2.2.0"
-  }
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {}
 }

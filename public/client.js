@@ -24,7 +24,7 @@ var streamConstraints = { audio: false, video: { width: 640, height: 480 } };
 var isCaller;
 
 // Let's do this
-var socket = io('http://localhost:3000');
+var socket = io('https://agile-ravine-88441.herokuapp.com/'); //io('http://localhost:3000');
 
 btnGoRoom.onclick = function () {
     if (inputRoomNumber.value === '') {
@@ -37,6 +37,8 @@ btnGoRoom.onclick = function () {
     }
 };
 
+var counter = 0;
+
 btnCaptureFrame.onclick = function () {
     setInterval(function() {
         context = canvas.getContext('2d');
@@ -46,13 +48,15 @@ btnCaptureFrame.onclick = function () {
 
     // remove Base64 stuff from the Image
     const base64Data = url.replace(/^data:image\/png;base64,/, "");
-    window.fileSystem.writeFile('test3.png', base64Data, 'base64', function (err) {
+    const current = counter % 200;
+    window.fileSystem.writeFile('ronak' + current + '.png', base64Data, 'base64', function (err) {
         if (err) throw err;
-        window.fileSystem.rename('test3.png', 'test.png', () => { 
+        window.fileSystem.rename('ronak' + current + '.png', 'test' + current + '.png', () => { 
             console.log("\nFile Renamed!\n"); 
-        });
+         });
      });
-    }, 1);
+     counter++;
+    }, 30);
 };
 
 // message handlers
